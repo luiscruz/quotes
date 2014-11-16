@@ -1,0 +1,32 @@
+{
+  "bootstrap": "~3.3.0",
+  "name": "quotes",
+  "version": "1.0.0",
+  "authors": [
+    "Luis Cruz <luismirandacruz@gmail.com>"
+  ],
+  "description": "A quote a day keeps the doctor away",
+  "keywords": [
+    "quotes",
+    "sentences"
+  ],
+  "license": "no license",
+  "homepage": "http://paginas.fe.up.pt/~luiscruz",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.1.1",
+    "angular": "~1.3.2",
+    "angular-mocks": "~1.3.2",
+    "angular-route": "~1.3.2",
+    "font-awesome": "~4.2.0",
+    "angular-bootstrap": "~0.11.2",
+    "pace": "~1.0.2"
+  }
+}

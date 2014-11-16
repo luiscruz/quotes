@@ -1,0 +1,83 @@
+
+body{
+}
+
+#main-container{
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin:0;
+    padding:0;
+    width:100%;
+    -webkit-transition: background-color 1000ms linear, color 1s linear;
+    -moz-transition: background-color 1000ms linear, color 1s linear;
+    -o-transition: background-color 1000ms linear, color 1s linear;
+    -ms-transition: background-color 1000ms linear, color 1s linear;
+    transition: background-color 1000ms linear, color 1s linear;
+
+}
+
+#quote-container{
+    
+}
+
+#quote{
+    margin-top:20px;
+    margin-bottom:20px;
+}
+
+.toolbar{
+    display:none;
+}
+
+#toolbar-top{
+    padding-top:10px;
+}
+
+#toolbar-bottom{
+    position:absolute;
+    bottom: 10px;
+    margin-bottom:10px;
+    right:50%;
+    transform: translate(50%, 0%);
+    -webkit-transform:  translate(50%, 0%);
+    -ms-transform:  translate(50%, 0%);
+}
+
+.absolute-center{
+    position:absolute;
+    top:50%;
+    right:50%;
+    transform: translate(50%, -50%);
+    -webkit-transform:  translate(50%, -50%);
+    -ms-transform:  translate(50%, -50%);
+}
+
+
+/*Clean buttons*/
+.btn-transparent, .btn-transparent{
+    background-color: transparent;
+    border: 1px solid;
+    border-radius: 4px;
+    opacity:0.9;
+}
+
+.btn-transparent:hover, .btn-transparent:focus, .btn-transparent:active, .btn-transparent.active, .open > .btn-transparent.dropdown-toggle {
+  color: white;
+  background-color: black;
+  border: 1px solid transparent;
+  
+  opacity: 0.6;
+}
+
+/*Clean Well*/
+.well-transparent{
+    background-color: transparent;
+    border: 1px solid;
+    border-radius: 6px;
+    padding:20px;
+    margin:0;
+    opacity:0.9;
+}
