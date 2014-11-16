@@ -11,13 +11,18 @@ body{
     margin:0;
     padding:0;
     width:100%;
-    color:transparent;
+    background-color:inherit;
+    color:inherit;
+    
     -webkit-transition: background-color 1000ms linear, color 1s linear;
     -moz-transition: background-color 1000ms linear, color 1s linear;
     -o-transition: background-color 1000ms linear, color 1s linear;
     -ms-transition: background-color 1000ms linear, color 1s linear;
     transition: background-color 1000ms linear, color 1s linear;
+}
 
+#angular-view{
+    background-color:inherit;
 }
 
 #quote-container{
