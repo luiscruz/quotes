@@ -54,7 +54,7 @@ appControllers.controller('QuoteByDateCtrl', function ($scope, $http, $routePara
 
 appControllers.directive('buttonTransparent', function () {
     return {
-        restrict: 'E',
+        restrict: 'EA',
         link: function (scope, element) {
             element.addClass('btn btn-transparent')
             element.on('mouseenter', function() {

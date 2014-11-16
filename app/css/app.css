@@ -57,7 +57,7 @@ body{
 
 
 /*Clean buttons*/
-.btn-transparent, .btn-transparent{
+.btn-transparent{
     background-color: transparent;
     border: 1px solid;
     border-radius: 4px;
@@ -70,6 +70,10 @@ body{
   border: 1px solid transparent;
   
   opacity: 0.6;
+}
+
+a.btn-transparent{
+    color:inherit;
 }
 
 /*Clean Well*/

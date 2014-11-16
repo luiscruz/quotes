@@ -10,25 +10,21 @@
 </div>
 
 
-<button type="button" class="btn btn-default" tooltip="Tooltip on bottom">Tooltip on bottom</button>
-
-<button type="button" class="btn btn-default" tooltip="Tooltip on right">Tooltip on right</button>
-
-
 <div id="toolbar-bottom" class="toolbar text-center container" ng-mouseenter="onMouseEnterHiddenElements()" ng-mouseleave="onMouseLeaveHiddenElements()">
   <div class='row hidden-xs'>
-    <div class='col-sm-4'>
+    <div class='col-sm-4' style='text-align:left'>
 
       
-      <button-transparent tooltip="Menu" tooltip-placement="top" ><i class="fa fa-navicon fa-lg"></i></button-transparent>
-      <button-transparent data-toggle="tooltip" data-placement="top" title="Today"><i class="fa fa-clock-o fa-lg"></i></button-transparent>
+      <a button-transparent tooltip="Menu"><i class="fa fa-navicon fa-lg"></i></a>
+      <a button-transparent tooltip="Today" title="Today" href='#/'><i class="fa fa-clock-o fa-lg"></i></a>
       
     </div>
     <div class='col-sm-4'>
         <button-transparent>Today</button-transparent>    
     </div>
+    
     <div class='col-sm-4'>
-      <div class='well-transparent'>
+      <div class='well-transparent' ng-show='false'>
         <input ng-model="bgColor"/>
         <input ng-model="fgColor"/>
         <p>Mouse inside hiddden elements: {{mouseInsideHiddenElements}}</p>
