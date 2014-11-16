@@ -68,4 +68,25 @@ appControllers.directive('buttonTransparent', function () {
             });
         }
     };
-})
+});
+
+appControllers.controller('QuoteIndexCtrl', function ($scope, $http, $routeParams) {
+    $http.get(api_url+'/quotes/').success(function(data, status, headers, config){
+        $scope.quotes = data;
+    })
+    
+    $scope.quoteStyle = function(quote){
+        return {
+            "background-color": quote.bgColor,
+            color: quote.fgColor
+        };
+    }
+    
+    $scope.updateQuote = function(quote){
+        console.log('update quote started')
+        $http.put(api_url+'/quotes/'+quote._id, quote).
+            success(function(data, status, headers, config){
+                console.log('update quote succeeded')
+            });
+    }
+});

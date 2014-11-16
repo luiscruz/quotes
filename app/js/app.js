@@ -21,6 +21,10 @@ app.config(['$routeProvider',
         templateUrl: 'partials/quote_show.html',
         controller: 'QuoteByDateCtrl'
       }).
+      when('/quotes/index', {
+        templateUrl: 'partials/quote_index.html',
+        controller: 'QuoteIndexCtrl'
+      }).
       otherwise({
         redirectTo: today_path
       });

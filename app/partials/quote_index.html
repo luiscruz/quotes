@@ -1,0 +1,28 @@
+<div class = "container">
+<div ng-repeat="quote in quotes" ng-style="quoteStyle(quote)" class="well">
+  <div class="quote">{{quote.quote}}</div>
+  <div class="author">{{quote.author}}</div>
+  <div class="input-group">
+    <span class="input-group-addon">Quote</span>
+    <input type="text" ng-model="quote.quote" class="form-control" placeholder="Quote">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">Author</span>
+    <input type="text" ng-model="quote.author" class="form-control" placeholder="Author">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">Background Color</span>
+    <input type="text" ng-model="quote.bgColor" class="form-control" placeholder="Background Color">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">Foreground Color</span>
+    <input type="text" ng-model="quote.fgColor" class="form-control" placeholder="Foreground Color">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">Publish On Date</span>
+    <input type="text" ng-model="quote.publishOnDate" class="form-control" placeholder="Publish On Date">
+  </div>
+  <button-transparent ng-click="updateQuote(quote)">Update</button-transparent>
+</div>
+</div>
+{{quotes}}
