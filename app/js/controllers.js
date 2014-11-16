@@ -1,11 +1,11 @@
 var appControllers = angular.module('appControllers', []);
 var api_url = 'http://localhost:3000';
 
-appControllers.controller('QuoteByDateCtrl', function ($scope, $http, $routeParams) {
+appControllers.controller('QuoteByDateCtrl', function ($scope, $http, $routeParams, $window) {
     var current_day = $routeParams.day,
         current_month = $routeParams.month,
         current_year = $routeParams.year;
-    
+    var current_date = new Date(current_year, current_month -1, current_day)
     
     window.hiddenElements = '#toolbar-bottom, #toolbar-top'; //redundant but needed to hide these elements
     window.timeoutDelay = 2000;
@@ -48,8 +48,25 @@ appControllers.controller('QuoteByDateCtrl', function ($scope, $http, $routePara
             $scope.author = data.author;
             $scope.bgColor = data.bgColor;
             $scope.fgColor = data.fgColor;
+            jQuery('body').css({'background-color':$scope.bgColor, 'color':$scope.fgColor})
         })
-
+        
+    $scope.goToDayBefore = function(){
+        var dayBefore = new Date(current_date)
+        dayBefore.setDate(current_date.getDate() - 1);
+        goToDate(dayBefore.getFullYear(),(dayBefore.getMonth()+1),dayBefore.getDate());
+    }
+    
+    $scope.goToDayAfter = function(){
+        var dayBefore = new Date(current_date)
+        dayBefore.setDate(current_date.getDate() + 1);
+        goToDate(dayBefore.getFullYear(),(dayBefore.getMonth()+1),dayBefore.getDate());
+    }
+    
+    goToDate = function(year, month, day){
+        $window.location.href = '#/'+year+'/'+month+'/'+day;
+        
+    }
 });
 
 appControllers.directive('buttonTransparent', function () {

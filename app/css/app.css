@@ -11,6 +11,7 @@ body{
     margin:0;
     padding:0;
     width:100%;
+    color:transparent;
     -webkit-transition: background-color 1000ms linear, color 1s linear;
     -moz-transition: background-color 1000ms linear, color 1s linear;
     -o-transition: background-color 1000ms linear, color 1s linear;
