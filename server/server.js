@@ -18,7 +18,7 @@ app.get('/quotes/:id', quotes_routes.show);
 app.get('/quotes/:year/:month/:day', quotes_routes.show_by_date)
 
 // app.post('/quotes', quotes_routes.create);
-// app.put('/quotes/:id', quotes_routes.update);
+app.put('/quotes/:id', quotes_routes.update);
 // app.delete('/quotes/:id', quotes_routes.delete);
 
 app.listen(3000);
