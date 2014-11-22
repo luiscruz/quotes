@@ -1,4 +1,35 @@
 <div class = "container">
+  
+  <!--New Quote-->
+<div ng-style="quoteStyle(new_quote)" class="well-transparent quote-in-index">
+  <h4>New Quote</h4>
+  <div class="quote">{{new_quote.quote}}</div>
+  <div class="author">{{new_quote.author}}</div>
+  <div class="input-group">
+    <span class="input-group-addon">Quote</span>
+    <input type="text" ng-model="new_quote.quote" class="form-control" placeholder="Quote">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">Author</span>
+    <input type="text" ng-model="new_quote.author" class="form-control" placeholder="Author">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">Background Color</span>
+    <input type="text" ng-model="new_quote.bgColor" class="form-control" placeholder="Background Color">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">Foreground Color</span>
+    <input type="text" ng-model="new_quote.fgColor" class="form-control" placeholder="Foreground Color">
+  </div>
+  <div class="input-group">
+    <span class="input-group-addon">Publish On Date</span>
+    <input type="text" ng-model="new_quote.publishOnDate" class="form-control" placeholder="Publish On Date">
+  </div>
+  <button-transparent ng-click="createQuote(new_quote)">Create</button-transparent>
+</div>  
+  
+  
+  <!-- Quote index -->
 <div ng-repeat="quote in quotes" ng-style="quoteStyle(quote)" class="well-transparent quote-in-index">
   <div class="quote">{{quote.quote}}</div>
   <div class="author">{{quote.author}}</div>
