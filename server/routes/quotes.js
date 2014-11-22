@@ -1,7 +1,7 @@
 Quote = require('../models/quote')
 
 exports.index = function(req, res){
-    Quote.find(function(err, quotes){
+    Quote.find().sort('-publishOnDate').exec(function(err, quotes){
         if(err){
             res.send(err);
         }
