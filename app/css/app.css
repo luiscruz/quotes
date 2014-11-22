@@ -14,11 +14,11 @@ body{
     background-color:inherit;
     color:inherit;
     
-    -webkit-transition: background-color 1000ms linear, color 1s linear;
-    -moz-transition: background-color 1000ms linear, color 1s linear;
-    -o-transition: background-color 1000ms linear, color 1s linear;
-    -ms-transition: background-color 1000ms linear, color 1s linear;
-    transition: background-color 1000ms linear, color 1s linear;
+    -webkit-transition: background-color 1000ms ease, color 1s ease;
+    -moz-transition: background-color 1000ms ease, color 1s ease;
+    -o-transition: background-color 1000ms ease, color 1s ease;
+    -ms-transition: background-color 1000ms ease, color 1s ease;
+    transition: background-color 1000ms ease, color 1s ease;
 }
 
 #angular-view{
@@ -51,6 +51,7 @@ body{
     -webkit-transform:  translate(50%, 0%);
     -ms-transform:  translate(50%, 0%);
 }
+
 
 .absolute-center{
     position:absolute;
@@ -90,4 +91,9 @@ a.btn-transparent{
     padding:20px;
     margin:0;
     opacity:0.9;
+}
+
+
+.quote-in-index{
+    margin-bottom: 10px;
 }
