@@ -87,12 +87,15 @@ appControllers.directive('buttonTransparent', function () {
     };
 });
 
-appControllers.controller('QuoteIndexCtrl', function ($scope, $http, $routeParams) {
+appControllers.controller('QuoteIndexCtrl', function ($scope, $http, $route, $routeParams) {
     $http.get(api_url+'/quotes/').success(function(data, status, headers, config){
         $scope.quotes = data;
     })
     
     $scope.quoteStyle = function(quote){
+        if (quote == undefined){
+            return {};
+        }
         return {
             "background-color": quote.bgColor,
             color: quote.fgColor
@@ -104,6 +107,14 @@ appControllers.controller('QuoteIndexCtrl', function ($scope, $http, $routeParam
         $http.put(api_url+'/quotes/'+quote._id, quote).
             success(function(data, status, headers, config){
                 console.log('update quote succeeded')
+            });
+    }
+    
+    $scope.createQuote = function(quote){
+        $http.post(api_url+'/quotes', quote).
+            success(function(data, status, headers, config){
+                console.log('create quote succeeded')
+                $route.reload()
             });
     }
 });
