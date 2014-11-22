@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var quoteSchema = mongoose.Schema({
     quote: String,
     author: String,
-    publishOnDate: Date,
+    publishOnDate: {type: Date, unique:true, sparse: true},
     bgColor: String,
     fgColor: String
 })
