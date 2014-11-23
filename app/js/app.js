@@ -5,7 +5,6 @@ var app = angular.module('quotesApp', [
         'ui.bootstrap',
         'ngRoute',
         'appControllers',
-        'angular-datepicker',
     ]
 );
     

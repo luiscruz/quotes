@@ -117,4 +117,12 @@ appControllers.controller('QuoteIndexCtrl', function ($scope, $http, $route, $ro
                 $route.reload()
             });
     }
+    
+    $scope.isToday = function(date){
+        today = new Date();
+        console.log(today);
+        console.log(date);
+        console.log('...')
+        return date == today;
+    }
 });
