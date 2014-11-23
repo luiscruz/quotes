@@ -1,4 +1,8 @@
 <div class = "container">
+  <div class='page-header'>
+    <h1>Quotes</h1>
+  </div>
+  <input type="text" pick-a-date="new_quote.publishOnDate" pick-a-date-options="{close:'Close'}" placeholder="Select Date" />
   
   <!--New Quote-->
 <div ng-style="quoteStyle(new_quote)" class="well-transparent quote-in-index">
@@ -22,9 +26,8 @@
     <input type="text" ng-model="new_quote.fgColor" class="form-control" placeholder="Foreground Color">
   </div>
   <div class="input-group">
-    <span class="input-group-addon">Publish On Date</span>
-    <input type="text" ng-model="new_quote.publishOnDate" class="form-control" placeholder="Publish On Date">
-  </div>
+    <datepicker ng-model="new_quote.publishOnDate" show-weeks="false" class="well well-sm"></datepicker>
+    </div>
   <button-transparent ng-click="createQuote(new_quote)">Create</button-transparent>
 </div>  
   
@@ -50,9 +53,8 @@
     <input type="text" ng-model="quote.fgColor" class="form-control" placeholder="Foreground Color">
   </div>
   <div class="input-group">
-    <span class="input-group-addon">Publish On Date</span>
-    <input type="text" ng-model="quote.publishOnDate" class="form-control" placeholder="Publish On Date">
-  </div>
+    <datepicker ng-model="quote.publishOnDate" show-weeks="false" class="well well-sm"></datepicker>
+    </div>
   <button-transparent ng-click="updateQuote(quote)">Update</button-transparent>
 </div>
 </div>
