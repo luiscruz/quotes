@@ -6,6 +6,7 @@ var app = angular.module('quotesApp', [
         'ngRoute',
         'appControllers',
         'colorpicker.module',
+        'ngFlowtype',
     ]
 );
     
