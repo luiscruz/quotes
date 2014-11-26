@@ -1,8 +1,8 @@
 var appControllers = angular.module('appControllers', []);
-var api_url = 'http://localhost:3000';
+var api_url = 'http://localhost:3000/api';
 //var api_url = 'https://aquote.herokuapp.com';
 
-appControllers.controller('QuoteByDateCtrl', function ($scope, $http, $routeParams, $window) {
+appControllers.controller('QuoteByDateCtrl', function ($scope, $http, $routeParams, $location) {
     var current_day = $routeParams.day,
         current_month = $routeParams.month,
         current_year = $routeParams.year;
@@ -65,7 +65,7 @@ appControllers.controller('QuoteByDateCtrl', function ($scope, $http, $routePara
     }
     
     goToDate = function(year, month, day){
-        $window.location.href = '#/'+year+'/'+month+'/'+day;
+        $location.path( '/'+year+'/'+month+'/'+day);
         
     }
 });
