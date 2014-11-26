@@ -10,7 +10,8 @@ var app = express();
 app.use(bodyParser.json());
 
 //connect to MongoDB database
-mongoose.connect('mongodb://localhost/quotes');
+//mongoose.connect('mongodb://localhost/quotes');
+mongoose.connect('mongodb://heroku_app31979237:h69v11qvkd0j2l2cp4666n2oiv@ds051750.mongolab.com:51750/heroku_app31979237');
 
 app.get('/quotes', quotes_routes.index);
 app.post('/quotes', quotes_routes.create);
