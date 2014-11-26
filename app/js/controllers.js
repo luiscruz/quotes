@@ -1,6 +1,6 @@
 var appControllers = angular.module('appControllers', []);
-var api_url = 'http://localhost:3000/api';
-//var api_url = 'https://aquote.herokuapp.com';
+//var api_url = 'http://localhost:3000/api';
+var api_url = 'https://aquote.herokuapp.com/api';
 
 appControllers.controller('QuoteByDateCtrl', function ($scope, $http, $routeParams, $location) {
     var current_day = $routeParams.day,
