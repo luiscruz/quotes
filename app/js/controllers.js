@@ -120,9 +120,30 @@ appControllers.controller('QuoteIndexCtrl', function ($scope, $http, $route, $ro
     
     $scope.isToday = function(date){
         today = new Date();
-        console.log(today);
-        console.log(date);
-        console.log('...')
-        return date == today;
+        dateObj = new Date(date)
+        return dateObj.toDateString() == today.toDateString();
+    }
+    
+    $scope.isTomorrow = function(date){
+        tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        dateObj = new Date(date);
+        return dateObj.toDateString() == tomorrow.toDateString();
+    }
+    
+    function daydiff(first, second){
+        first = new Date(first)
+        second = new Date(second)
+        return Math.round(Math.abs((second-first)/(1000*60*60*24)));
+    }
+    
+    $scope.daysInBetween = function(quote, index){
+        if(index > 0){
+            previousQuote = $scope.quotes[index -1];
+            console.log(previousQuote.publishOnDate)
+            console.log(quote.publishOnDate)
+            console.log('--')
+            return daydiff(previousQuote.publishOnDate, quote.publishOnDate);
+        }
     }
 });

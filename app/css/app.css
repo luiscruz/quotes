@@ -97,3 +97,15 @@ a.btn-transparent{
 .quote-in-index{
     margin-bottom: 10px;
 }
+
+.quote-in-index .author{
+    margin-bottom:20px
+}
+
+.today{
+    background-color: lightgray;
+    color: gray;
+    border-top: 5px dashed gray;
+    border-bottom: 7px dashed gray;
+    margin-bottom:20px;
+}
