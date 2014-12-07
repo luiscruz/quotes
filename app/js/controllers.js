@@ -1,6 +1,6 @@
 var appControllers = angular.module('appControllers', []);
-//var api_url = 'http://localhost:3000/api';
-var api_url = 'https://aquote.herokuapp.com/api';
+var api_url = 'http://localhost:3000/api';
+//var api_url = 'https://aquote.herokuapp.com/api';
 
 appControllers.controller('QuoteByDateCtrl', function ($scope, $http, $routeParams, $location) {
     var current_day = $routeParams.day,
@@ -146,5 +146,19 @@ appControllers.controller('QuoteIndexCtrl', function ($scope, $http, $route, $ro
             console.log('--')
             return daydiff(previousQuote.publishOnDate, quote.publishOnDate);
         }
+    }
+});
+
+appControllers.controller('LoginCtrl', function ($scope, $http,$location, Session) {
+    $scope.credentials = {'username': '', 'password': ''}
+    $scope.login = function(){
+        hashed_password = $scope.credentials.password;
+        return $http
+            .post(api_url+'/login', {username: $scope.credentials.username, password: hashed_password})
+            .success(function (data) {
+                console.log(data)
+                Session.create(data.session_id);
+                $location.path('/quotes/index');
+            });
     }
 });

@@ -5,7 +5,10 @@
 </div>
 
 <div id="quote-container" class="absolute-center container">  
-<p id="quote" class="lead container" flowtype min-font="16" max-font="28" font-ratio="35">{{quote}}</p>
+    <div class='container text-center' ng-show='quote != undefined'></div>
+<p id="quote" class="lead container" flowtype min-font="16" max-font="28" font-ratio="35">{{quote}}
+  <i ng-show='quote != undefined' class="fa fa-square-o  "></i>
+</p>
 <p id="author" class="text-right text-muted">{{author}} –</p>
 </div>
 

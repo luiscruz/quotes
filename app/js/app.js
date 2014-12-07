@@ -5,6 +5,7 @@ var app = angular.module('quotesApp', [
         'ui.bootstrap',
         'ngRoute',
         'appControllers',
+        'appServices',
         'colorpicker.module',
         'ngFlowtype',
     ]
@@ -26,6 +27,14 @@ app.config(['$routeProvider', '$locationProvider',
       when('/quotes/index', {
         templateUrl: '/app/partials/quote_index.html',
         controller: 'QuoteIndexCtrl'
+      }).
+      when('/login', {
+        templateUrl: 'app/partials/login.html',
+          controller: 'LoginCtrl'
+      }).
+      when('/logout', {
+          template: '',
+          controller: function(Session, $location){Session.destroy(); $location.path('/login')}
       }).
       otherwise({
         redirectTo: today_path

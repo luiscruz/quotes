@@ -2,7 +2,12 @@ var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
     quotes_routes = require('./routes/quotes'),
+    authentication_routes = require('./routes/authentication'),
     serveStatic = require('serve-static');
+
+var passport = require('passport'),
+    LocalStrategy = require('passport-local').Strategy;
+
 var appRoot = require('app-root-path');
     
 var app = express();
@@ -13,6 +18,9 @@ app.use(bodyParser.json());
 //connect to MongoDB database
 //mongoose.connect('mongodb://localhost/quotes');
 mongoose.connect('mongodb://heroku_app31979237:h69v11qvkd0j2l2cp4666n2oiv@ds051750.mongolab.com:51750/heroku_app31979237');
+
+
+authentication_routes.initialize(app);
 
 app.use('/app', serveStatic('app'))
 app.use('/bower_components', serveStatic('bower_components'))
