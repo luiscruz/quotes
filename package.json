@@ -1,6 +1,6 @@
 {
   "name": "quotes",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A quote a day keeps the doctor away",
   "main": "server/server.js",
   "scripts": {
