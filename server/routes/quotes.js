@@ -1,4 +1,6 @@
-Quote = require('../models/quote')
+Quote = require('../models/quote');
+var webshot = require('webshot');
+
 
 exports.index = function(req, res){
     console.log('yuay')
@@ -12,6 +14,25 @@ exports.index = function(req, res){
         res.send(quotes);
     })
 };
+
+take_snapshot = function(){
+    options = {
+      screenSize: {
+        width: 1200
+          , height: 630
+      }
+    , shotSize: {
+        width: 1200
+      , height: 'all'
+      }
+    , userAgent: 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_2 like Mac OS X; en-us)'
+        + ' AppleWebKit/531.21.20 (KHTML, like Gecko) Mobile/7B298g'
+    }
+
+    webshot('flickr.com', 'flickr.jpeg', options, function(err) {
+      // screenshot now saved to flickr.jpeg
+    });
+}
 
 exports.create = function(req, res){
     if (! req.user) {

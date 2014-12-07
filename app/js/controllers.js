@@ -2,6 +2,7 @@ var appControllers = angular.module('appControllers', []);
 //var api_url = 'http://localhost:3000/api';
 var api_url = 'https://aquote.herokuapp.com/api';
 
+
 appControllers.controller('QuoteByDateCtrl', function ($scope, $http, $routeParams, $location) {
     var current_day = $routeParams.day,
         current_month = $routeParams.month,
@@ -51,8 +52,10 @@ appControllers.controller('QuoteByDateCtrl', function ($scope, $http, $routePara
             $scope.fgColor = data.fgColor;
             jQuery('body').css({'background-color':$scope.bgColor, 'color':$scope.fgColor})
         })
-        .error(function(){
-           $location.path('/') 
+        .error(function(data, status){
+            if(status == 401){
+                $location.path('/')    
+            }
         });
         
     $scope.goToDayBefore = function(){
