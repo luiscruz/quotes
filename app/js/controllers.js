@@ -51,6 +51,9 @@ appControllers.controller('QuoteByDateCtrl', function ($scope, $http, $routePara
             $scope.fgColor = data.fgColor;
             jQuery('body').css({'background-color':$scope.bgColor, 'color':$scope.fgColor})
         })
+        .error(function(){
+           $location.path('/') 
+        });
         
     $scope.goToDayBefore = function(){
         var dayBefore = new Date(current_date)
