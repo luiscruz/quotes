@@ -50,7 +50,15 @@ appControllers.controller('QuoteByDateCtrl', function ($scope, $http, $routePara
             $scope.author = data.author;
             $scope.bgColor = data.bgColor;
             $scope.fgColor = data.fgColor;
-            jQuery('body').css({'background-color':$scope.bgColor, 'color':$scope.fgColor})
+            jQuery('body').css({'background-color':$scope.bgColor, 'color':$scope.fgColor});
+            
+            if(window.callPhantom){
+                window.setTimeout(function(){
+                    window.callPhantom('takeShot');
+                },
+                1010);
+            }
+
         })
         .error(function(data, status){
             if(status == 401){
