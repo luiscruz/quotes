@@ -3,7 +3,6 @@ var webshot = require('webshot');
 
 
 exports.index = function(req, res){
-    console.log('yuay')
     if (! req.user) {
         return res.send(401);
     }
@@ -15,25 +14,26 @@ exports.index = function(req, res){
     })
 };
 
-take_snapshot = function(path){
+take_snapshot = function(quote){
+    console.log('taking webshot for '+quote.id);
     options = {
       screenSize: {
-        width: 1200
+        width: 800
           , height: 630
-      }
-    , shotSize: {
-        width: 1200
-      , height: 'all'
-      }
-    , userAgent: 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 3_2 like Mac OS X; en-us)'
-       + ' AppleWebKit/531.21.20 (KHTML, like Gecko) Mobile/7B298g',
+      },
       quality: 100,
+      timeout: 15000,
       takeShotOnCallback: true,
-      
     }
-
-    webshot(path, 'flickr.jpeg', options, function(err) {
+    dir = 'webshots/'
+    date_string = quote.publishOnDate.getFullYear() + '/' + (quote.publishOnDate.getMonth() + 1)+ '/' + quote.publishOnDate.getDate();
+    filename = date_string + '.jpeg';
+    console.log(filename)
+        console.log('aquote.herokuapp.com/'+date_string);
+    webshot('https://aquote.herokuapp.com/'+date_string, dir+filename, options, function(err) {
       // screenshot now saved to flickr.jpeg
+        console.log(err);
+        console.log('webshot finish')
     });
 }
 
@@ -51,6 +51,7 @@ exports.create = function(req, res){
         if(err){
             res.send(err);
         }
+        take_snapshot(quote)
         res.send(quote)
     });
 }
@@ -90,6 +91,7 @@ exports.update = function(req, res){
         quote.bgColor = req.body.bgColor;
         quote.fgColor = req.body.fgColor;
         quote.save();
+        take_snapshot(quote)
         res.send(quote);
     })
 }

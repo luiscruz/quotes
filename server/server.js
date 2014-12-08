@@ -24,6 +24,7 @@ authentication_routes.initialize(app);
 
 app.use('/app', serveStatic('app'))
 app.use('/bower_components', serveStatic('bower_components'))
+app.use('/webshots', serveStatic('webshots'))
 
 app.get('/api/quotes', quotes_routes.index);
 app.post('/api/quotes', quotes_routes.create);

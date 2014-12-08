@@ -1,6 +1,6 @@
 var appControllers = angular.module('appControllers', []);
-//var api_url = 'http://localhost:3000/api';
-var api_url = 'https://aquote.herokuapp.com/api';
+var api_url = 'http://localhost:3000/api';
+//var api_url = 'https://aquote.herokuapp.com/api';
 
 
 appControllers.controller('QuoteByDateCtrl', function ($scope, $http, $routeParams, $location) {
@@ -63,6 +63,9 @@ appControllers.controller('QuoteByDateCtrl', function ($scope, $http, $routePara
         .error(function(data, status){
             if(status == 401){
                 $location.path('/')    
+            }
+            if(window.callPhantom){
+                window.callPhantom('takeShot');
             }
         });
         
